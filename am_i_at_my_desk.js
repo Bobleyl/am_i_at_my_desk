@@ -20,7 +20,7 @@ pythonProcess.stdout.on('data', (data) => {
         })
         var mailOptions = {
             from: process.env.EMAIL,
-            to: 'bleyldev@gmail.com',
+            to: process.env.MY_EMAIL,
             subject: 'Congrats, you were at work on time',
             text: 'Congradulations, you did it!',
             attachments: [{   // stream as an attachment
@@ -28,7 +28,7 @@ pythonProcess.stdout.on('data', (data) => {
                 path: process.env.IMAGE_PATH
             }]
         }
-          
+
         transporter.sendMail(mailOptions, function(error, info){
             if (error) {
               console.log(error)
@@ -56,7 +56,7 @@ pythonProcess.stdout.on('data', (data) => {
                 path: process.env.IMAGE_PATH
             }]
         }
-          
+
         transporter.sendMail(mailOptions, function(error, info){
             if (error) {
               console.log(error)
